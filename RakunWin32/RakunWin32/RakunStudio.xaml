@@ -1,0 +1,254 @@
+﻿<Controls:MetroWindow
+	xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:avalonDock="http://schemas.xceed.com/wpf/xaml/avalondock"
+	xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+	xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" 
+	xmlns:local="clr-namespace:RakunWin32" 
+    xmlns:Sys="clr-namespace:System;assembly=mscorlib"
+	xmlns:MVVMTestApp="clr-namespace:AvalonDock.MVVMTestApp" xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions" mc:Ignorable="d"
+	x:Class="RakunWin32.RakunStudio"
+	x:Name="Window"
+	Title="RakunStudio" d:DesignWidth="1164" d:DesignHeight="718" WindowState="Maximized" WindowStyle="None">
+    <Controls:MetroWindow.Resources>
+        <MVVMTestApp:ActiveDocumentConverter x:Key="ActiveDocumentConverter"/>
+        <avalonDock:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+        <DataTemplate x:Key="RakunNodeReaderTemplate">
+            <StackPanel>
+                <TextBlock Text="{Binding ModuleName}" Foreground="{DynamicResource Foreground}"/>
+                <Button Content="ADD" Width="75" HorizontalAlignment="Right" Command="{Binding AddModuleCommand, Mode=OneWay}"/>
+            </StackPanel>
+        </DataTemplate>
+        <Style TargetType="{x:Type ListBoxItem}">
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="Loaded">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="0:0:2">
+                                </DoubleAnimation>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+            </Style.Triggers>
+        </Style>
+    </Controls:MetroWindow.Resources>
+    <DockPanel x:Name="dockManager">
+
+        <DockPanel.DataContext>
+            <MVVMTestApp:Workspace/>
+        </DockPanel.DataContext>
+
+        <Menu VerticalAlignment="Top" DockPanel.Dock="Top" SnapsToDevicePixels="True">
+            <MenuItem Header="File">
+                <MenuItem Header="New" Command="{Binding NewCommand}"/>
+                <Separator/>
+                <MenuItem Header="Save" Command="{Binding ActiveDocument.SaveCommand}"/>
+                <MenuItem Header="Save As..." Command="{Binding ActiveDocument.SaveAsCommand}"/>
+                <Separator/>
+                <MenuItem Header="Close" Command="{Binding ActiveDocument.CloseCommand}"/>
+            </MenuItem>
+            <MenuItem Header="_Edit">
+                <MenuItem Header="Cut" HorizontalAlignment="Left" Width="114.66" Foreground="White"/>
+                <MenuItem Header="Copy" HorizontalAlignment="Left" Width="114.66" Foreground="White"/>
+                <MenuItem Header="Paste" HorizontalAlignment="Left" Width="114.66" Foreground="White"/>
+                <MenuItem Header="Select All" HorizontalAlignment="Left" Width="114.66" Foreground="White"/>
+            </MenuItem>
+            <MenuItem Header="_Build">
+                <MenuItem Header="Compile" HorizontalAlignment="Left" Width="114.66" Foreground="White" Command="{Binding ActiveDocument.BuildCommand, Mode=OneWay}"/>
+                <MenuItem Header="Upload" HorizontalAlignment="Left" Width="114.66" Foreground="White" Command="{Binding ActiveDocument.UploadCommand, Mode=OneWay}"/>
+                <MenuItem x:Name="MIPort" Header="Port" HorizontalAlignment="Left" Width="114.66" Foreground="White">
+                    <MenuItem.Resources>
+                        <RadioButton x:Key="RadioButtonResource" x:Shared="false" HorizontalAlignment="Center" 
+                     GroupName="MenuItemRadio" IsHitTestVisible="False"/>
+                    </MenuItem.Resources>
+                    <MenuItem.ItemContainerStyle>
+                        <Style TargetType="MenuItem">
+                            <Setter Property="Icon" Value="{DynamicResource RadioButtonResource}"/>
+                            <EventSetter Event="Click" Handler="MenuItemWithRadioButtons_Click" />
+                        </Style>
+                    </MenuItem.ItemContainerStyle>
+                </MenuItem>
+                <MenuItem x:Name="MIBoundrate" Header="Boundrate" HorizontalAlignment="Left" Width="114.66" Foreground="White">
+                    <MenuItem.Resources>
+                        <RadioButton x:Key="RadioButtonResource" x:Shared="false" HorizontalAlignment="Center" 
+                    		GroupName="MenuItemRadio" IsHitTestVisible="False"/>
+                    </MenuItem.Resources>
+                    <MenuItem.ItemContainerStyle>
+                        <Style TargetType="{x:Type MenuItem}">
+                            <Setter Property="Icon" Value="{DynamicResource RadioButtonResource}"/>
+                            <EventSetter Event="MenuItem.Click" Handler="MenuItemWithRadioButtons_Click" />
+                        </Style>
+                    </MenuItem.ItemContainerStyle>
+                </MenuItem>
+                <MenuItem x:Name="MIDatabit" Header="Databit" HorizontalAlignment="Left" Width="114.66" Foreground="White">
+                    <MenuItem.Resources>
+                        <RadioButton x:Key="RadioButtonResource" x:Shared="false" HorizontalAlignment="Center" 
+                    		GroupName="MenuItemRadio" IsHitTestVisible="False"/>
+                    </MenuItem.Resources>
+                    <MenuItem.ItemContainerStyle>
+                        <Style TargetType="{x:Type MenuItem}">
+                            <Setter Property="Icon" Value="{DynamicResource RadioButtonResource}"/>
+                            <EventSetter Event="MenuItem.Click" Handler="MenuItemWithRadioButtons_Click" />
+                        </Style>
+                    </MenuItem.ItemContainerStyle>
+                </MenuItem>
+                <MenuItem Header="Programmer" HorizontalAlignment="Left" Width="114.66" Foreground="White"/>
+            </MenuItem>
+            <MenuItem Header="_Tools">
+                <MenuItem Header="Add Module" HorizontalAlignment="Left" Width="114.66" Foreground="White" Command="{Binding AddModuleCommand, Mode=OneWay}"/>
+            </MenuItem>
+            <MenuItem Header="_Window">
+                <MenuItem Header="Monitor" HorizontalAlignment="Left" Width="114.66" Foreground="White"/>
+                <MenuItem Header="Object Tree" HorizontalAlignment="Left" Width="114.66" Foreground="White"/>
+            </MenuItem>
+
+        </Menu>
+        <StatusBar x:Name="statusBar" DockPanel.Dock="Bottom" Margin="0">
+            <StatusBar.Background>
+                <SolidColorBrush Color="{Binding Statusbar}"/>
+            </StatusBar.Background>
+            <DockPanel Width="{Binding ActualWidth, ElementName=statusBar}" LastChildFill="False">
+                <TextBlock TextWrapping="Wrap" Text="{Binding StatusString}" Margin="0">
+                    <TextBlock.Foreground>
+                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HighlightTextColorKey}}"/>
+                    </TextBlock.Foreground>
+                </TextBlock>
+                <StackPanel Orientation="Vertical" DockPanel.Dock="Right" Margin="0,0,8,0">
+                    <TextBlock TextWrapping="Wrap" Text="Created By Rakun">
+                        <TextBlock.Foreground>
+                            <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HighlightTextColorKey}}"/>
+                        </TextBlock.Foreground>
+                    </TextBlock>
+                </StackPanel>
+            </DockPanel>
+        </StatusBar>
+        <Grid>
+            <avalonDock:DockingManager x:Name="RootLayout" AllowMixedOrientation="True"
+				BorderBrush="Black"
+				BorderThickness="1" Background="#FF2D2D30" AnchorablesSource="{Binding Tools}" 
+				DocumentsSource="{Binding Files}"
+				ActiveContent="{Binding ActiveDocument, Converter={StaticResource ActiveDocumentConverter}, Mode=TwoWay}" Foreground="White">
+
+                <avalonDock:DockingManager.Theme>
+                    <avalonDock:Vs2013DarkTheme/>
+                </avalonDock:DockingManager.Theme>
+                <avalonDock:DockingManager.LayoutItemTemplateSelector>
+                    <MVVMTestApp:PanesTemplateSelector>
+                        <MVVMTestApp:PanesTemplateSelector.FileViewTemplate>
+                            <DataTemplate>
+                                <TextBox Text="{Binding TextContent, UpdateSourceTrigger=PropertyChanged}"
+									BorderThickness="0" AcceptsReturn="True" TextWrapping="Wrap"/>
+                            </DataTemplate>
+                        </MVVMTestApp:PanesTemplateSelector.FileViewTemplate>
+                        <MVVMTestApp:PanesTemplateSelector.FileStatsViewTemplate>
+                            <DataTemplate>
+                                <Border Padding="5">
+                                    <StackPanel Orientation="Vertical">
+                                        <TextBlock Text="{Binding FileSize}"/>
+                                        <TextBlock Text="{Binding LastModified}" />
+                                        <TextBox Text="test" AcceptsReturn="True" TextWrapping="Wrap"/>
+                                    </StackPanel>
+                                </Border>
+                            </DataTemplate>
+                        </MVVMTestApp:PanesTemplateSelector.FileStatsViewTemplate>
+                        <MVVMTestApp:PanesTemplateSelector.RakunFileViewTemplate>
+                            <DataTemplate>
+                            </DataTemplate>
+                        </MVVMTestApp:PanesTemplateSelector.RakunFileViewTemplate>
+                    </MVVMTestApp:PanesTemplateSelector>
+
+                </avalonDock:DockingManager.LayoutItemTemplateSelector>
+
+                <avalonDock:DockingManager.LayoutItemContainerStyleSelector>
+                    <MVVMTestApp:PanesStyleSelector>
+                        <MVVMTestApp:PanesStyleSelector.ToolStyle>
+                            <Style TargetType="{x:Type avalonDock:LayoutAnchorableItem}">
+                                <Setter Property="Title" Value="{Binding Model.Title}"/>
+                                <Setter Property="IconSource" Value="{Binding Model.IconSource}"/>
+                                <Setter Property="Visibility" Value="{Binding Model.IsVisible, ConverterParameter={x:Static Visibility.Hidden}, Converter={StaticResource BoolToVisibilityConverter}, Mode=TwoWay}"/>
+                                <Setter Property="ContentId" Value="{Binding Model.ContentId}"/>
+                                <Setter Property="IsSelected" Value="{Binding Model.IsSelected, Mode=TwoWay}"/>
+                                <Setter Property="IsActive" Value="{Binding Model.IsActive, Mode=TwoWay}"/>
+                            </Style>
+                        </MVVMTestApp:PanesStyleSelector.ToolStyle>
+                        <MVVMTestApp:PanesStyleSelector.FileStyle>
+                            <Style TargetType="{x:Type avalonDock:LayoutItem}">
+                                <Setter Property="Title" Value="{Binding Model.Title}"/>
+                                <Setter Property="ToolTip" Value="{Binding Model.FilePath}"/>
+                                <Setter Property="CloseCommand" Value="{Binding Model.CloseCommand}"/>
+                                <Setter Property="IconSource" Value="{Binding Model.IconSource}"/>
+                                <Setter Property="ContentId" Value="{Binding Model.ContentId}"/>
+                            </Style>
+                        </MVVMTestApp:PanesStyleSelector.FileStyle>
+                        <MVVMTestApp:PanesStyleSelector.RakunStyle>
+                            <Style TargetType="{x:Type avalonDock:LayoutItem}">
+                                <Setter Property="Title" Value="{Binding Model.Title}"/>
+                                <Setter Property="ToolTip" Value="{Binding Model.FilePath}"/>
+                                <Setter Property="CloseCommand" Value="{Binding Model.CloseCommand}"/>
+                                <Setter Property="IconSource" Value="{Binding Model.IconSource}"/>
+                                <Setter Property="ContentId" Value="{Binding Model.ContentId}"/>
+                            </Style>
+                        </MVVMTestApp:PanesStyleSelector.RakunStyle>
+                    </MVVMTestApp:PanesStyleSelector>
+                </avalonDock:DockingManager.LayoutItemContainerStyleSelector>
+                <avalonDock:DockingManager.LayoutUpdateStrategy>
+                    <MVVMTestApp:LayoutInitializer/>
+                </avalonDock:DockingManager.LayoutUpdateStrategy>
+
+                <avalonDock:DockingManager.DocumentHeaderTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="{Binding IconSource}" Margin="0,0,4,0"/>
+                            <TextBlock Text="{Binding Title}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </avalonDock:DockingManager.DocumentHeaderTemplate>
+                <avalonDock:LayoutRoot x:Name="_layoutRoot">
+                    <avalonDock:LayoutPanel Orientation="Horizontal">
+                        <avalonDock:LayoutAnchorablePane DockWidth="200">
+
+                            <avalonDock:LayoutAnchorable ContentId="ModuleList" Title="Module List" CanHide="False" CanClose="False"
+								AutoHideWidth="240">
+                                <ListBox ItemTemplate="{DynamicResource RakunNodeReaderTemplate}" ItemsSource="{Binding RakunManager.ReaderList}"/>
+                            </avalonDock:LayoutAnchorable>
+                        </avalonDock:LayoutAnchorablePane>
+                        <avalonDock:LayoutDocumentPaneGroup  >
+                            <avalonDock:LayoutDocumentPane  >
+                                <avalonDock:LayoutDocument ContentId="QuickStart" Title="QuickStart"   >
+                                    <local:QuickStartUserControl/>
+                                </avalonDock:LayoutDocument>
+                            </avalonDock:LayoutDocumentPane>
+                        </avalonDock:LayoutDocumentPaneGroup>
+                        <avalonDock:LayoutAnchorablePaneGroup DockWidth="200">
+                            <avalonDock:LayoutAnchorablePane>
+                                <avalonDock:LayoutAnchorable ContentId="Monitor" Title="Monitor" >
+                                    <ListBox x:Name="Monitor"/>
+                                </avalonDock:LayoutAnchorable>
+                                <avalonDock:LayoutAnchorable ContentId="properties" Title="Properties" CanHide="False" CanClose="False"
+									AutoHideWidth="240">
+                                    <xctk:PropertyGrid NameColumnWidth="110" SelectedObject="{Binding LastFocusedDocument.Content, ElementName=_layoutRoot}" AutoGenerateProperties="False" IsEnabled="False" BorderBrush="#FF007ACC" Background="#FF2D2D30" Foreground="#FFF1F1F1">
+                                        <xctk:PropertyGrid.PropertyDefinitions>
+                                            <xctk:PropertyDefinition TargetProperties="Background" />
+                                            <xctk:PropertyDefinition TargetProperties="BorderBrush" />
+                                            <xctk:PropertyDefinition TargetProperties="BorderThickness" />
+                                            <xctk:PropertyDefinition TargetProperties="FontSize" />
+                                            <xctk:PropertyDefinition TargetProperties="FontStyle" />
+                                            <xctk:PropertyDefinition TargetProperties="Width" />
+                                            <xctk:PropertyDefinition TargetProperties="Height" />
+                                        </xctk:PropertyGrid.PropertyDefinitions>
+                                    </xctk:PropertyGrid>
+                                </avalonDock:LayoutAnchorable>
+                            </avalonDock:LayoutAnchorablePane>
+                        </avalonDock:LayoutAnchorablePaneGroup>
+                    </avalonDock:LayoutPanel>
+
+                </avalonDock:LayoutRoot>
+            </avalonDock:DockingManager>
+        </Grid>
+    </DockPanel>
+</Controls:MetroWindow>

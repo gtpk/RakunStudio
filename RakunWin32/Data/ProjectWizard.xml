@@ -1,0 +1,7 @@
+<Wizard>
+	<RakunWizard>
+		<FrontPage name="Welcome to Rakun!" content="Welcome to rankun project wizard.\n This Wizard wiil create your Rakun project.\nRankun project makes your Arduino Logic Diagram.\nIf you want to make project. Please click next.\n"/>
+		<Interior name="Project Setting" content="Please Type Your Project Name."/>
+		<Interior name="Finish" content="Please click next ."/>
+	<RakunWizard>
+</Wizard>

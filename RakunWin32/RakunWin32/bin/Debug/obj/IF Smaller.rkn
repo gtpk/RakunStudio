@@ -1,0 +1,167 @@
+<sequence name='file'>
+  <recursive name='declaration_list'>
+    <choice name='declaration'>
+      <plus name='declaration_content'>
+        <choice name='node'>
+          <leaf name='identifier'>
+          int
+          </leaf>
+          </choice>
+        <choice name='node'>
+          <leaf name='identifier'>
+          Condition
+          </leaf>
+          </choice>
+        <choice name='node'>
+          <sequence name='symbol'>
+          = 
+            </sequence>
+            </choice>
+        <choice name='node'>
+          <sequence name='literal'>
+            <sequence name='int_literal'>
+              <choice name='unsigned_literal'>
+                <sequence name='octal_literal'>
+                  </sequence>
+                  </choice>
+              </sequence>
+              </sequence>
+              </choice>
+              </plus>
+      <charsequence name='semicolon'>
+      ;
+      </charsequence>
+      </choice>
+    <choice name='declaration'>
+      <plus name='declaration_content'>
+        <choice name='node'>
+          <leaf name='identifier'>
+          int
+          </leaf>
+          </choice>
+        <choice name='node'>
+          <leaf name='identifier'>
+          input
+          </leaf>
+          </choice>
+        <choice name='node'>
+          <sequence name='symbol'>
+          = 
+            </sequence>
+            </choice>
+        <choice name='node'>
+          <sequence name='literal'>
+            <sequence name='int_literal'>
+              <choice name='unsigned_literal'>
+                <sequence name='octal_literal'>
+                  </sequence>
+                  </choice>
+              </sequence>
+              </sequence>
+              </choice>
+              </plus>
+      <charsequence name='semicolon'>
+      ;
+      </charsequence>
+      </choice>
+    <choice name='declaration'>
+      <plus name='declaration_content'>
+        <choice name='node'>
+          <leaf name='identifier'>
+          void
+          </leaf>
+          </choice>
+        <choice name='node'>
+          <leaf name='identifier'>
+          setup
+          </leaf>
+          </choice>
+        <choice name='node'>
+          <sequence name='paran_group'>
+            <recursive name='declaration_list'>
+              </recursive>
+            </sequence>
+            </choice>
+        <choice name='node'>
+          <sequence name='brace_group'>
+            <recursive name='declaration_list'>
+              </recursive>
+            </sequence>
+            </choice>
+        <choice name='node'>
+          <leaf name='identifier'>
+          void
+          </leaf>
+          </choice>
+        <choice name='node'>
+          <leaf name='identifier'>
+          loop
+          </leaf>
+          </choice>
+        <choice name='node'>
+          <sequence name='paran_group'>
+            <recursive name='declaration_list'>
+              </recursive>
+            </sequence>
+            </choice>
+        <choice name='node'>
+          <sequence name='brace_group'>
+            <recursive name='declaration_list'>
+              <choice name='declaration'>
+                <plus name='declaration_content'>
+                  <choice name='node'>
+                    <leaf name='identifier'>
+                    if
+                    </leaf>
+                    </choice>
+                  <choice name='node'>
+                    <sequence name='paran_group'>
+                      <recursive name='declaration_list'>
+                        <choice name='declaration'>
+                          <plus name='declaration_content'>
+                            <choice name='node'>
+                              <leaf name='identifier'>
+                              Condition
+                              </leaf>
+                              </choice>
+                            <choice name='node'>
+                              <sequence name='symbol'>
+                              	&lt; 
+                                </sequence>
+                                </choice>
+                            <choice name='node'>
+                              <leaf name='identifier'>
+                              input
+                              </leaf>
+                              </choice>
+                              </plus>
+                          </choice>
+                          </recursive>
+                      </sequence>
+                      </choice>
+                  <choice name='node'>
+                    <sequence name='brace_group'>
+                      <recursive name='declaration_list'>
+                        </recursive>
+                      </sequence>
+                      </choice>
+                  <choice name='node'>
+                    <leaf name='identifier'>
+                    else
+                    </leaf>
+                    </choice>
+                  <choice name='node'>
+                    <sequence name='brace_group'>
+                      <recursive name='declaration_list'>
+                        </recursive>
+                      </sequence>
+                      </choice>
+                      </plus>
+                </choice>
+                </recursive>
+            </sequence>
+            </choice>
+            </plus>
+      </choice>
+      </recursive>
+      </sequence>

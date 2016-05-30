@@ -1,0 +1,4 @@
+window.height=457
+window.left=40
+window.top=40
+window.width=416

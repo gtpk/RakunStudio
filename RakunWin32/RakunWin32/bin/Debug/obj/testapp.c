@@ -1,0 +1,1 @@
+int localvalue2=7;int localvalue0=7;int localvalue1=0;void setup(){pinMode(7,OUTPUT);Serial.begin(9600);pinMode(7,OUTPUT);Serial.begin(9600);}void loop(){localvalue1=analogRead(0);localvalue3=analogRead(1);}

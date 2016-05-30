@@ -1,0 +1,23 @@
+tone () 
+
+
+Description 
+
+Produce a specific frequency on a pin square wave (50% duty cycle). The duration can be set, otherwise it would have been generated waveform until the call noTone () function. This pin can be connected to a piezoelectric buzzer or other speakers play the sound. 
+
+Can produce a sound at the same time. If a pin has been playing music, that call tone () will not have any effect. If the music playing on the same pin, it will automatically adjust the frequency. 
+
+Using the tone () function and PWM 11 feet with 3 feet of interference (except Mega board). 
+
+Note: If you want to produce different tones on multiple pins, you have to use the tone before the next pin () function calls this pin noTone () function. 
+
+Grammar 
+
+tone (pin, frequency) 
+tone (pin, frequency, duration) 
+
+Parameter 
+
+pin: pin to produce sound 
+frequency: the frequency of the sound produced, the unit Hz, type unsigned int 
+duration: the duration of the sound, in milliseconds (optional), type unsigned long

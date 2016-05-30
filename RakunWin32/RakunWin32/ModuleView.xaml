@@ -1,0 +1,203 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:local="clr-namespace:RakunWin32"
+	xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+	xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+	mc:Ignorable="d"
+	x:Class="RakunWin32.ModuleView"
+	x:Name="UserControl" Foreground="White">
+	<UserControl.Resources>
+		<Storyboard x:Key="OnCreated">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="RootLayout">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<BackEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="RootLayout">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<BackEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+		<DataTemplate x:Key="ValueList">
+			<Grid d:DesignWidth="110.833" d:DesignHeight="17.333">
+				<local:PathPointNode HorizontalAlignment="Left" Margin="0" VerticalAlignment="Center" PathType="Value" Foreground="#FF4CFFCE" DraggingCommand="{Binding PathPointSelectCommand}" EnterCommand="{Binding PathPointEnterCommand}" LeaveCommand="{Binding PathPointLeaveCommand}"/>
+				<local:PathPointNode HorizontalAlignment="Right" Margin="0,0,3,0" VerticalAlignment="Center" PathType="Value" Foreground="#FF4CFFCE" DraggingCommand="{Binding PathPointSelectCommand}" EnterCommand="{Binding PathPointEnterCommand}" LeaveCommand="{Binding PathPointLeaveCommand}"/>
+				<StackPanel HorizontalAlignment="Stretch" Height="Auto" VerticalAlignment="Center" Width="Auto" Margin="15,0" Orientation="Horizontal">
+					<TextBlock Margin="0" TextWrapping="Wrap" Text="{Binding NodeName}" VerticalAlignment="Stretch" Height="15.96" FontSize="9.333"/>
+				</StackPanel>
+			</Grid>
+		</DataTemplate>
+		<Style x:Key="ListBoxItemStyle1" TargetType="{x:Type ListBoxItem}">
+			<Setter Property="Background" Value="Transparent"/>
+			<Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+			<Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+			<Setter Property="Padding" Value="2,0,0,0"/>
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="{x:Type ListBoxItem}">
+						<Border x:Name="Bd" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="true">
+							<ContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+						</Border>
+						<ControlTemplate.Triggers>
+							<Trigger Property="IsSelected" Value="true">
+								<Setter Property="Background" TargetName="Bd" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+								<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}"/>
+							</Trigger>
+							<MultiTrigger>
+								<MultiTrigger.Conditions>
+									<Condition Property="IsSelected" Value="true"/>
+									<Condition Property="Selector.IsSelectionActive" Value="false"/>
+								</MultiTrigger.Conditions>
+								<Setter Property="Background" TargetName="Bd" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+								<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+							</MultiTrigger>
+							<Trigger Property="IsEnabled" Value="false">
+								<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+							</Trigger>
+						</ControlTemplate.Triggers>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+		<DataTemplate x:Key="RakunValueNodeViewModelTemplate">
+			<Grid Height="Auto" Width="Auto">
+				<local:PathPointNode HorizontalAlignment="Left" Margin="0" VerticalAlignment="Center" PathType="Value" Foreground="#FF4CFFCE" DraggingCommand="{Binding PathPointSelectCommand}" EnterCommand="{Binding PathPointEnterCommand}" LeaveCommand="{Binding PathPointLeaveCommand}" Width="10" Height="10" Focusable="True"/>
+				<StackPanel HorizontalAlignment="Stretch" Height="Auto" VerticalAlignment="Center" Margin="15,0" Orientation="Horizontal">
+					<TextBlock Margin="0" TextWrapping="Wrap" Text="{Binding ValueName}" VerticalAlignment="Stretch" Height="15.96" FontSize="9.333"/>
+				</StackPanel>
+				<local:PathPointNode HorizontalAlignment="Right" Margin="0,0,3,0" VerticalAlignment="Center" PathType="Value" Foreground="#FF4CFFCE" DraggingCommand="{Binding PathPointSelectCommand}" EnterCommand="{Binding PathPointEnterCommand}" LeaveCommand="{Binding PathPointLeaveCommand}" Width="10" Height="10" Focusable="True" DirectionType="OUT"/>
+			</Grid>
+		</DataTemplate>
+	</UserControl.Resources>
+	<UserControl.Triggers>
+		<EventTrigger RoutedEvent="FrameworkElement.Loaded">
+			<BeginStoryboard Storyboard="{StaticResource OnCreated}"/>
+		</EventTrigger>
+	</UserControl.Triggers>
+
+	<Border x:Name="RootLayout" CornerRadius="15" d:DataContext="{d:DesignData /SampleData/RakunModuleViewModelSampleData.xaml}" Background="#00000000" RenderTransformOrigin="0.5,0.5">
+		<Border.LayoutTransform>
+			<TransformGroup>
+				<ScaleTransform ScaleX="1.2" ScaleY="1.2"/>
+				<SkewTransform/>
+				<RotateTransform/>
+				<TranslateTransform/>
+			</TransformGroup>
+		</Border.LayoutTransform>
+		<Border.RenderTransform>
+			<TransformGroup>
+				<ScaleTransform/>
+				<SkewTransform/>
+				<RotateTransform/>
+				<TranslateTransform/>
+			</TransformGroup>
+		</Border.RenderTransform>
+
+		<i:Interaction.Triggers>
+			<i:EventTrigger EventName="Loaded">
+				<ei:ControlStoryboardAction Storyboard="{StaticResource OnCreated}"/>
+			</i:EventTrigger>
+		</i:Interaction.Triggers>
+
+		<Grid x:Name="LayoutRoot" Margin="5" Background="#00000000" IsHitTestVisible="True">
+			<Grid x:Name="InputNode" VerticalAlignment="Center" Margin="0,0,0,-0.001">
+				<Border x:Name="RootLayout_Copy5" CornerRadius="15" Background="#7F000000" d:DataContext="{d:DesignData /SampleData/RakunModuleViewModelSampleData.xaml}" Margin="-5"/>
+				<StackPanel VerticalAlignment="Center">
+                    <StackPanel VerticalAlignment="Center" Margin="0" Orientation="Horizontal">
+                        <local:PathPointNode HorizontalAlignment="Left" DraggingCommand="{Binding PathPointSelectCommand}" EnterCommand="{Binding PathPointEnterCommand}" LeaveCommand="{Binding PathPointLeaveCommand}" VerticalAlignment="Center" Margin="0,0,3,0" PathType="Value" Foreground="#FF4CFFCE"/>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,3,0">
+                            <TextBlock x:Name="TBTitle3" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding ModuleInfo.ModuleName}" VerticalAlignment="Center" Foreground="{DynamicResource Foreground}" TextAlignment="Center" FontSize="9.333" Margin="0" MinWidth="70"/>
+                            <TextBlock x:Name="TBTitle3_Copy" TextWrapping="Wrap" Text=":" VerticalAlignment="Center" Foreground="{DynamicResource Foreground}" TextAlignment="Center" FontSize="9.333" Margin="3,0"/>
+                            <TextBox x:Name="tbinput" TextWrapping="Wrap" Text="{Binding input}" VerticalAlignment="Center" FontSize="9.333" MinWidth="20" TextChanged="TextBox_TextChanged"/>
+                        </StackPanel>
+                        <local:PathPointNode HorizontalAlignment="Left" DraggingCommand="{Binding PathPointSelectCommand}" EnterCommand="{Binding PathPointEnterCommand}" LeaveCommand="{Binding PathPointLeaveCommand}" VerticalAlignment="Center" Margin="0,0,3,0" DirectionType="OUT" PathType="Value" Foreground="#FF4CFFCE"/>
+                    </StackPanel>
+                </StackPanel>
+			</Grid>
+			<Grid x:Name="ValueNode" VerticalAlignment="Center" Visibility="Collapsed">
+				<Border x:Name="RootLayout_Copy4" CornerRadius="15" Background="#7F000000" d:DataContext="{d:DesignData /SampleData/RakunModuleViewModelSampleData.xaml}" Margin="-5"/>
+				<StackPanel VerticalAlignment="Center">
+					<StackPanel VerticalAlignment="Center" Margin="0" Orientation="Horizontal">
+						<local:PathPointNode HorizontalAlignment="Left" DraggingCommand="{Binding PathPointSelectCommand}" EnterCommand="{Binding PathPointEnterCommand}" LeaveCommand="{Binding PathPointLeaveCommand}" VerticalAlignment="Center" Margin="0,0,3,0" PathType="Value" Foreground="#FF4CFFCE"/>
+						<TextBlock x:Name="TBTitle1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding ModuleInfo.ModuleName}" VerticalAlignment="Center" Foreground="{DynamicResource Foreground}" TextAlignment="Center" FontSize="9.333" Margin="0,0,4,0" MinWidth="70"/>
+						<local:PathPointNode HorizontalAlignment="Left" DraggingCommand="{Binding PathPointSelectCommand}" EnterCommand="{Binding PathPointEnterCommand}" LeaveCommand="{Binding PathPointLeaveCommand}" VerticalAlignment="Center" Margin="0,0,3,0" DirectionType="OUT" PathType="Value" Foreground="#FF4CFFCE"/>
+					</StackPanel>
+				</StackPanel>
+			</Grid>
+			<Grid x:Name="ModuleNode" Visibility="Collapsed">
+				<Border x:Name="RootLayout_Copy" CornerRadius="15" Background="#7F000000" d:DataContext="{d:DesignData /SampleData/RakunModuleViewModelSampleData.xaml}" Margin="-5"/>
+				<StackPanel>
+					<Grid VerticalAlignment="Center">
+						<TextBlock x:Name="TBTitle" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding ModuleName}" VerticalAlignment="Top" Foreground="{DynamicResource Foreground}" TextAlignment="Center" FontSize="9.333" Margin="0,0,45,0"/>
+					</Grid>
+					<Grid VerticalAlignment="Center" Margin="0,5,0,0">
+						<local:PathPointNode Margin="0" HorizontalAlignment="Right" DraggingCommand="{Binding PathPointSelectCommand}" EnterCommand="{Binding PathPointEnterCommand}" LeaveCommand="{Binding PathPointLeaveCommand}" DirectionType="OUT"/>
+						<local:PathPointNode HorizontalAlignment="Left" DraggingCommand="{Binding PathPointSelectCommand}" EnterCommand="{Binding PathPointEnterCommand}" LeaveCommand="{Binding PathPointLeaveCommand}"/>
+					</Grid>
+					<ListBox ItemsSource="{Binding ModuleValues}" ItemTemplate="{DynamicResource RakunValueNodeViewModelTemplate}" IsHitTestVisible="True" ClipToBounds="True" ItemContainerStyle="{DynamicResource ListBoxItemStyle1}" BorderThickness="0" Foreground="White" Background="{x:Null}" BorderBrush="#00828790"/>
+				</StackPanel>
+			</Grid>
+			<Grid x:Name="StartingNode" Visibility="Collapsed">
+				<Border x:Name="RootLayout_Copy1" CornerRadius="15" Background="#7F530000" d:DataContext="{d:DesignData /SampleData/RakunModuleViewModelSampleData.xaml}" Margin="-5"/>
+				<StackPanel>
+					<Grid VerticalAlignment="Center">
+						<TextBlock x:Name="TBTitle2" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="{DynamicResource Foreground}" TextAlignment="Center" FontSize="9.333" Margin="0,0,45,0" Text="Starting Point"/>
+					</Grid>
+					<Grid VerticalAlignment="Center" Margin="0,5,0,0">
+						<local:PathPointNode Margin="0" HorizontalAlignment="Right" DraggingCommand="{Binding PathPointSelectCommand}" EnterCommand="{Binding PathPointEnterCommand}" LeaveCommand="{Binding PathPointLeaveCommand}" DirectionType="OUT"/>
+					</Grid>
+				</StackPanel>
+			</Grid>
+			<Grid x:Name="IFNode" Visibility="Collapsed">
+				<Border x:Name="RootLayout_Copy2" CornerRadius="15" Background="#7F000F55" d:DataContext="{d:DesignData /SampleData/RakunModuleViewModelSampleData.xaml}" Margin="-5"/>
+				<StackPanel>
+					<Grid VerticalAlignment="Center">
+						<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="{DynamicResource Foreground}" TextAlignment="Center" FontSize="9.333" Margin="0,0,45,0" Text="{Binding ModuleInfo.ModuleName}"/>
+					</Grid>
+					<Grid VerticalAlignment="Center" Margin="0,5,0,0">
+						<local:PathPointNode Margin="0" HorizontalAlignment="Right" DraggingCommand="{Binding PathPointSelectCommand}" EnterCommand="{Binding PathPointEnterCommand}" LeaveCommand="{Binding PathPointLeaveCommand}" DirectionType="OUT"/>
+						<local:PathPointNode Margin="0,0,-6,0" HorizontalAlignment="Left" DraggingCommand="{Binding PathPointSelectCommand}" EnterCommand="{Binding PathPointEnterCommand}" LeaveCommand="{Binding PathPointLeaveCommand}"/>
+						<TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" Foreground="{DynamicResource Foreground}" Margin="0,0,12.998,-0.002" FontSize="9.333"/>
+					</Grid>
+					<Grid VerticalAlignment="Center" Margin="0,5,0,0">
+						<local:PathPointNode Margin="0" HorizontalAlignment="Right" DraggingCommand="{Binding PathPointSelectCommand}" EnterCommand="{Binding PathPointEnterCommand}" LeaveCommand="{Binding PathPointLeaveCommand}" DirectionType="OUT" MySequence="TrueSequence"/>
+						<TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" Foreground="{DynamicResource Foreground}" Text="True" Margin="0,0,12.999,-0.001" FontSize="9.333"/>
+					</Grid>
+					<Grid VerticalAlignment="Center" Margin="0,5,0,0">
+						<local:PathPointNode Margin="0" HorizontalAlignment="Right" DraggingCommand="{Binding PathPointSelectCommand}" EnterCommand="{Binding PathPointEnterCommand}" LeaveCommand="{Binding PathPointLeaveCommand}" DirectionType="OUT" MySequence="FalseSequence"/>
+						<TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" Foreground="{DynamicResource Foreground}" Text="False" Margin="0,0,13,0" FontSize="9.333"/>
+					</Grid>
+					<ListBox ItemsSource="{Binding ModuleValues}" ItemTemplate="{DynamicResource RakunValueNodeViewModelTemplate}" IsHitTestVisible="True" ClipToBounds="True" ItemContainerStyle="{DynamicResource ListBoxItemStyle1}" BorderThickness="0" Foreground="White" Margin="0" Background="{x:Null}" BorderBrush="#00828790"/>
+				</StackPanel>
+			</Grid>
+			<Grid x:Name="ForNode" Visibility="Collapsed">
+				<Border x:Name="RootLayout_Copy3" CornerRadius="15" Background="#7F003000" d:DataContext="{d:DesignData /SampleData/RakunModuleViewModelSampleData.xaml}" Margin="-5"/>
+				<StackPanel>
+					<Grid VerticalAlignment="Center">
+						<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="{DynamicResource Foreground}" TextAlignment="Center" FontSize="9.333" Margin="0,0,45,0" Text="FOR"/>
+					</Grid>
+					<Grid VerticalAlignment="Center" Margin="0,5,0,0">
+						<local:PathPointNode Margin="0" HorizontalAlignment="Right" DraggingCommand="{Binding PathPointSelectCommand}" EnterCommand="{Binding PathPointEnterCommand}" LeaveCommand="{Binding PathPointLeaveCommand}" DirectionType="OUT"/>
+						<local:PathPointNode Margin="0,0,-6,0" HorizontalAlignment="Left" DraggingCommand="{Binding PathPointSelectCommand}" EnterCommand="{Binding PathPointEnterCommand}" LeaveCommand="{Binding PathPointLeaveCommand}"/>
+						<TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" Foreground="{DynamicResource Foreground}" Margin="0,0,12.998,-0.002" FontSize="9.333"/>
+					</Grid>
+					<Grid VerticalAlignment="Center" Margin="0,5,0,0">
+						<local:PathPointNode Margin="0" HorizontalAlignment="Right" DraggingCommand="{Binding PathPointSelectCommand}" EnterCommand="{Binding PathPointEnterCommand}" LeaveCommand="{Binding PathPointLeaveCommand}" DirectionType="OUT"/>
+						<TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" Foreground="{DynamicResource Foreground}" Text="Roop" Margin="0,0,12.999,-0.001" FontSize="9.333"/>
+					</Grid>
+					<ListBox ItemsSource="{Binding ModuleValues}" ItemTemplate="{DynamicResource RakunValueNodeViewModelTemplate}" IsHitTestVisible="True" ClipToBounds="True" ItemContainerStyle="{DynamicResource ListBoxItemStyle1}" BorderThickness="0" Foreground="White" Margin="0" Background="{x:Null}" BorderBrush="#00828790"/>
+				</StackPanel>
+			</Grid>
+		</Grid>
+	</Border>
+</UserControl>

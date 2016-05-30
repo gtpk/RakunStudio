@@ -1,0 +1,12 @@
+int flame_3_0=4;
+int flame_3_1;
+void setup()
+{
+    pinMode(flame_3_0,INPUT);
+    
+}
+void loop()
+{
+    flame_3_1=digitalRead(flame_3_0);
+    
+}

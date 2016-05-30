@@ -1,0 +1,16 @@
+C:\Users\GTPKdesktop\Downloads\BezierSegmentDemo\BezierSegmentDemo\bin\Debug\BezierSegmentDemo.exe
+C:\Users\GTPKdesktop\Downloads\BezierSegmentDemo\BezierSegmentDemo\bin\Debug\BezierSegmentDemo.pdb
+C:\Users\GTPKdesktop\Downloads\BezierSegmentDemo\BezierSegmentDemo\obj\Debug\BezierSegmentDemo.csprojResolveAssemblyReference.cache
+C:\Users\GTPKdesktop\Downloads\BezierSegmentDemo\BezierSegmentDemo\obj\Debug\Window1.g.cs
+C:\Users\GTPKdesktop\Downloads\BezierSegmentDemo\BezierSegmentDemo\obj\Debug\App.g.cs
+C:\Users\GTPKdesktop\Downloads\BezierSegmentDemo\BezierSegmentDemo\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\GTPKdesktop\Downloads\BezierSegmentDemo\BezierSegmentDemo\obj\Debug\BezierSegmentDemo_MarkupCompile.cache
+C:\Users\GTPKdesktop\Downloads\BezierSegmentDemo\BezierSegmentDemo\obj\Debug\BezierSegmentDemo_MarkupCompile.lref
+C:\Users\GTPKdesktop\Downloads\BezierSegmentDemo\BezierSegmentDemo\obj\Debug\Window1.baml
+C:\Users\GTPKdesktop\Downloads\BezierSegmentDemo\BezierSegmentDemo\obj\Debug\BezierSegmentDemo.g.resources
+C:\Users\GTPKdesktop\Downloads\BezierSegmentDemo\BezierSegmentDemo\obj\Debug\BezierSegmentDemo.Properties.Resources.resources
+C:\Users\GTPKdesktop\Downloads\BezierSegmentDemo\BezierSegmentDemo\obj\Debug\BezierSegmentDemo.csproj.GenerateResource.Cache
+C:\Users\GTPKdesktop\Downloads\BezierSegmentDemo\BezierSegmentDemo\obj\Debug\BezierSegmentDemo.exe
+C:\Users\GTPKdesktop\Downloads\BezierSegmentDemo\BezierSegmentDemo\obj\Debug\BezierSegmentDemo.pdb
+D:\Rakun\trunk\RakunWin32\BezierSegmentDemo\BezierSegmentDemo\obj\Debug\BezierSegmentDemo.exe
+D:\Rakun\trunk\RakunWin32\BezierSegmentDemo\BezierSegmentDemo\obj\Debug\BezierSegmentDemo.pdb

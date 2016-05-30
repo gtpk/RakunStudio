@@ -1,0 +1,35 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d"
+	x:Class="RakunWin32.Welcom"
+	x:Name="UserControl"
+	d:DesignWidth="640" d:DesignHeight="480" Width="480" Height="548">
+
+	<Grid x:Name="LayoutRoot">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="7*"/>
+			<ColumnDefinition Width="113*"/>
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="58*"/>
+			<RowDefinition Height="217*"/>
+		</Grid.RowDefinitions>
+		<Rectangle Fill="#FF151515" Grid.ColumnSpan="2"/>
+		<TextBlock x:Name="textBlock" HorizontalAlignment="Right" Margin="0,0,5,0" TextWrapping="Wrap" Text="Welcome to Rakun!" VerticalAlignment="Bottom" Foreground="White" TextAlignment="Right" FontSize="48" Grid.Column="1"/>
+		<Rectangle Fill="#FF272727" Grid.Row="1" Grid.ColumnSpan="2"/>
+		<TextBlock Grid.Row="1" TextWrapping="Wrap" Foreground="White" Grid.Column="1" Margin="5,20,0,20" FontSize="18.667"><Run Text="Welcome to rankun project wizard."/><LineBreak/><Run Text="This Wizard wiil create your Rakun project."/><LineBreak/><Run Text="Rankun project makes your Arduino Logic Diagram."/><LineBreak/><Run Text="If you want to make project. please click next."/><LineBreak/><Run Text=""/></TextBlock>
+		<TextBlock HorizontalAlignment="Right" Margin="0,0,5,0" TextWrapping="Wrap" Text="{Binding Text, ElementName=textBlock}" VerticalAlignment="Bottom" Foreground="White" TextAlignment="Right" FontSize="48" Grid.Column="1" RenderTransformOrigin="0.5,0.5" Opacity="0.06" Clip="M-18.951111,16.562222 L141.04889,16.562222 L141.04889,55.228889 L-18.951111,55.228889 z">
+			<TextBlock.RenderTransform>
+				<TransformGroup>
+					<ScaleTransform ScaleX="3" ScaleY="3"/>
+					<SkewTransform/>
+					<RotateTransform/>
+					<TranslateTransform X="441" Y="-38"/>
+				</TransformGroup>
+			</TextBlock.RenderTransform>
+		</TextBlock>
+	</Grid>
+</UserControl>

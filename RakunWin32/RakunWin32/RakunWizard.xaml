@@ -1,0 +1,24 @@
+﻿<Controls:MetroWindow
+		xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        
+        xmlns:System="clr-namespace:System;assembly=mscorlib" xmlns:AnimationControl="clr-namespace:RakunWin32.AnimationControl" xmlns:VieModel="clr-namespace:RakunWin32.WizardPage.VieModel" xmlns:ViewModel="clr-namespace:RakunWin32.ViewModel" xmlns:local="clr-namespace:RakunWin32" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="RakunWin32.RakunWizard"
+        Title="Rakun Project Wizard"
+        Width="480" Height="600" WindowStartupLocation="CenterScreen" TitleForeground="#999988"
+        ResizeMode="NoResize" ShowMaxRestoreButton="False" WindowStyle="None" Background="#FF272727" Initialized="MetroWindow_Initialized">
+	
+
+	<Grid x:Name="LayoutRoot">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="550*"/>
+			<RowDefinition Height="43*"/>
+		</Grid.RowDefinitions>
+		<Rectangle Fill="#FF343434" HorizontalAlignment="Left" Height="43.508" Grid.Row="1" VerticalAlignment="Top" Width="480"/>
+		<Button x:Name="FinishButton" Content="Finish" HorizontalAlignment="Left" Height="26" Margin="365,10,0,7.508" VerticalAlignment="Center" Width="105" Grid.Row="1" Click="FinishButton_Click"/>
+		<Button x:Name="NextButton" Content="Next &gt;" HorizontalAlignment="Left" Height="26" Margin="255,10,0,7.508" VerticalAlignment="Center" Width="105" Grid.Row="1" Click="Button_Click"/>
+		<Button x:Name="BackButton" Content="&lt; Back" HorizontalAlignment="Left" Height="26" Margin="145,10,0,7.508" VerticalAlignment="Center" Width="105" Grid.Row="1" Click="BackButton_Click"/>
+		<Button Content="&lt; Back" HorizontalAlignment="Left" Height="26" Margin="10,10,0,7.508" VerticalAlignment="Center" Width="105" Grid.Row="1"/>
+		<AnimationControl:AnimatedContentControl x:Name="WizardContents" Content="{Binding Content}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="550" Width="480" Background="#FF272727"/>
+	</Grid>
+</Controls:MetroWindow>
