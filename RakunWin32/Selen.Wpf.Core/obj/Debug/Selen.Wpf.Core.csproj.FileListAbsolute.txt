@@ -40,3 +40,13 @@ C:\Rakun\trunk\RakunWin32\Selen.Wpf.Core\obj\Debug\Selen.Wpf.Core.Properties.Res
 C:\Rakun\trunk\RakunWin32\Selen.Wpf.Core\obj\Debug\Selen.Wpf.Core.csproj.GenerateResource.Cache
 C:\Rakun\trunk\RakunWin32\Selen.Wpf.Core\obj\Debug\Selen.Wpf.Core.dll
 C:\Rakun\trunk\RakunWin32\Selen.Wpf.Core\obj\Debug\Selen.Wpf.Core.pdb
+C:\RakunStudio\RakunWin32\Selen.Wpf.Core\bin\Debug\Selen.Wpf.Core.dll
+C:\RakunStudio\RakunWin32\Selen.Wpf.Core\bin\Debug\Selen.Wpf.Core.pdb
+C:\RakunStudio\RakunWin32\Selen.Wpf.Core\obj\Debug\MetroWindowResources.baml
+C:\RakunStudio\RakunWin32\Selen.Wpf.Core\obj\Debug\Resources.baml
+C:\RakunStudio\RakunWin32\Selen.Wpf.Core\obj\Debug\Selen.Wpf.Core_MarkupCompile.cache
+C:\RakunStudio\RakunWin32\Selen.Wpf.Core\obj\Debug\Selen.Wpf.Core.g.resources
+C:\RakunStudio\RakunWin32\Selen.Wpf.Core\obj\Debug\Selen.Wpf.Core.Properties.Resources.resources
+C:\RakunStudio\RakunWin32\Selen.Wpf.Core\obj\Debug\Selen.Wpf.Core.csproj.GenerateResource.Cache
+C:\RakunStudio\RakunWin32\Selen.Wpf.Core\obj\Debug\Selen.Wpf.Core.dll
+C:\RakunStudio\RakunWin32\Selen.Wpf.Core\obj\Debug\Selen.Wpf.Core.pdb

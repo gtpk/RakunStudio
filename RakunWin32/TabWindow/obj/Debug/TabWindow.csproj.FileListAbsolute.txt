@@ -54,3 +54,17 @@ C:\Rakun\trunk\RakunWin32\TabWindow\obj\Debug\TabWindow.Properties.Resources.res
 C:\Rakun\trunk\RakunWin32\TabWindow\obj\Debug\TabWindow.csproj.GenerateResource.Cache
 C:\Rakun\trunk\RakunWin32\TabWindow\obj\Debug\TabWindow.dll
 C:\Rakun\trunk\RakunWin32\TabWindow\obj\Debug\TabWindow.pdb
+C:\RakunStudio\RakunWin32\TabWindow\bin\Debug\TabWindow.dll
+C:\RakunStudio\RakunWin32\TabWindow\bin\Debug\TabWindow.pdb
+C:\RakunStudio\RakunWin32\TabWindow\obj\Debug\TabWindow.csprojResolveAssemblyReference.cache
+C:\RakunStudio\RakunWin32\TabWindow\obj\Debug\DropOverlayWindow.baml
+C:\RakunStudio\RakunWin32\TabWindow\obj\Debug\DropOverlayWindow.g.cs
+C:\RakunStudio\RakunWin32\TabWindow\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\RakunStudio\RakunWin32\TabWindow\obj\Debug\TabWindow_MarkupCompile.cache
+C:\RakunStudio\RakunWin32\TabWindow\obj\Debug\TabWindow_MarkupCompile.lref
+C:\RakunStudio\RakunWin32\TabWindow\obj\Debug\Themes\Generic.baml
+C:\RakunStudio\RakunWin32\TabWindow\obj\Debug\TabWindow.g.resources
+C:\RakunStudio\RakunWin32\TabWindow\obj\Debug\TabWindow.Properties.Resources.resources
+C:\RakunStudio\RakunWin32\TabWindow\obj\Debug\TabWindow.csproj.GenerateResource.Cache
+C:\RakunStudio\RakunWin32\TabWindow\obj\Debug\TabWindow.dll
+C:\RakunStudio\RakunWin32\TabWindow\obj\Debug\TabWindow.pdb
