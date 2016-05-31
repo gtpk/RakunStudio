@@ -138,6 +138,7 @@ namespace RakunWin32.Logic
                             
                             RakunNode _rnode = new RakunNode();
                             _rnode.NodeName = savedName.Trim();
+
                             _rnode.type = RakunType.FunctionName;
                             //Rakunlist.Add(_rnode);
                             

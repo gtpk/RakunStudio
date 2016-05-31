@@ -30,11 +30,24 @@ namespace RakunWin32.TabCommander
                 _ModuleInfo = value;
             }
         }
-
+        public string _input;
         public string input
         {
-            get;
-            set;
+            get
+            {
+                if (_input == null)
+                {
+                    return _ModuleInfo.ModuleName;
+                }
+                else
+                {
+                    return _input;
+                }
+            }
+            set
+            {
+                _input = value;
+            }
         }
 
         public void SetMother(RakunModuleViewModel vm)
@@ -183,6 +196,7 @@ namespace RakunWin32.TabCommander
                         RakunModuleViewModel ParentNodeVM = node.Input.BeforePoint.ModuleVM;
 
                         RakunNodeInput inputf = Workspace.This.RakunManager.inputNode.Clone() as RakunNodeInput;
+                       
                         inputf.rootNode.replace(inputf.rootNode.loopfunction, "NUMBER", ParentNodeVM.input);
                         inputf.rootNode.replace(inputf.rootNode.loopfunction, "INPUTVALUE", node.ChangedName);
                         c1 = c1 + inputf;
