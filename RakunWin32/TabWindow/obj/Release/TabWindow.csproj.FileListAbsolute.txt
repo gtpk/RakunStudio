@@ -1,0 +1,14 @@
+D:\Rakun\trunk\RakunWin32\TabWindow\bin\Release\TabWindow.dll
+D:\Rakun\trunk\RakunWin32\TabWindow\bin\Release\TabWindow.pdb
+D:\Rakun\trunk\RakunWin32\TabWindow\obj\Release\TabWindow.csprojResolveAssemblyReference.cache
+D:\Rakun\trunk\RakunWin32\TabWindow\obj\Release\DropOverlayWindow.baml
+D:\Rakun\trunk\RakunWin32\TabWindow\obj\Release\DropOverlayWindow.g.cs
+D:\Rakun\trunk\RakunWin32\TabWindow\obj\Release\GeneratedInternalTypeHelper.g.cs
+D:\Rakun\trunk\RakunWin32\TabWindow\obj\Release\TabWindow_MarkupCompile.cache
+D:\Rakun\trunk\RakunWin32\TabWindow\obj\Release\TabWindow_MarkupCompile.lref
+D:\Rakun\trunk\RakunWin32\TabWindow\obj\Release\Themes\Generic.baml
+D:\Rakun\trunk\RakunWin32\TabWindow\obj\Release\TabWindow.g.resources
+D:\Rakun\trunk\RakunWin32\TabWindow\obj\Release\TabWindow.Properties.Resources.resources
+D:\Rakun\trunk\RakunWin32\TabWindow\obj\Release\TabWindow.csproj.GenerateResource.Cache
+D:\Rakun\trunk\RakunWin32\TabWindow\obj\Release\TabWindow.dll
+D:\Rakun\trunk\RakunWin32\TabWindow\obj\Release\TabWindow.pdb

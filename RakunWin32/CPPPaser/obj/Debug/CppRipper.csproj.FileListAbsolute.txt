@@ -19,10 +19,3 @@ C:\Rakun\trunk\RakunWin32\CPPPaser\obj\Debug\CppRipper.dll
 C:\Rakun\trunk\RakunWin32\CPPPaser\obj\Debug\CppRipper.pdb
 C:\Rakun\trunk\RakunWin32\CPPPaser\bin\Debug\CppRipper.dll
 C:\Rakun\trunk\RakunWin32\CPPPaser\bin\Debug\CppRipper.pdb
-C:\RakunStudio\RakunWin32\CPPPaser\bin\Debug\CppRipper.dll
-C:\RakunStudio\RakunWin32\CPPPaser\bin\Debug\CppRipper.pdb
-C:\RakunStudio\RakunWin32\CPPPaser\obj\Debug\CppRipper.csprojResolveAssemblyReference.cache
-C:\RakunStudio\RakunWin32\CPPPaser\obj\Debug\CppRipper.Form1.resources
-C:\RakunStudio\RakunWin32\CPPPaser\obj\Debug\CppRipper.csproj.GenerateResource.Cache
-C:\RakunStudio\RakunWin32\CPPPaser\obj\Debug\CppRipper.dll
-C:\RakunStudio\RakunWin32\CPPPaser\obj\Debug\CppRipper.pdb

@@ -82,9 +82,3 @@ C:\Rakun\trunk\RakunWin32\Xceed.Wpf.AvalonDock.Themes.VS2013\obj\Debug\Xceed.Wpf
 C:\Rakun\trunk\RakunWin32\Xceed.Wpf.AvalonDock.Themes.VS2013\obj\Debug\Xceed.Wpf.AvalonDock.Themes.VS2013.dll
 C:\Rakun\trunk\RakunWin32\Xceed.Wpf.AvalonDock.Themes.VS2013\obj\Debug\Xceed.Wpf.AvalonDock.Themes.VS2013.pdb
 C:\Rakun\trunk\RakunWin32\Xceed.Wpf.AvalonDock.Themes.VS2013\obj\Debug\Xceed.Wpf.AvalonDock.Themes.VS2013.csprojResolveAssemblyReference.cache
-C:\RakunStudio\RakunWin32\Xceed.Wpf.AvalonDock.Themes.VS2013\obj\Debug\BlueTheme.baml
-C:\RakunStudio\RakunWin32\Xceed.Wpf.AvalonDock.Themes.VS2013\obj\Debug\DarkTheme.baml
-C:\RakunStudio\RakunWin32\Xceed.Wpf.AvalonDock.Themes.VS2013\obj\Debug\LightTheme.baml
-C:\RakunStudio\RakunWin32\Xceed.Wpf.AvalonDock.Themes.VS2013\obj\Debug\Brushes.baml
-C:\RakunStudio\RakunWin32\Xceed.Wpf.AvalonDock.Themes.VS2013\obj\Debug\Xceed.Wpf.AvalonDock.Themes.VS2013_MarkupCompile.cache
-C:\RakunStudio\RakunWin32\Xceed.Wpf.AvalonDock.Themes.VS2013\obj\Debug\Xceed.Wpf.AvalonDock.Themes.VS2013.csprojResolveAssemblyReference.cache

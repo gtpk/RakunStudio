@@ -1,0 +1,11 @@
+D:\Rakun\trunk\RakunWin32\Selen.Wpf.Core\bin\Release\Selen.Wpf.Core.dll
+D:\Rakun\trunk\RakunWin32\Selen.Wpf.Core\bin\Release\Selen.Wpf.Core.pdb
+D:\Rakun\trunk\RakunWin32\Selen.Wpf.Core\obj\Release\Selen.Wpf.Core.csprojResolveAssemblyReference.cache
+D:\Rakun\trunk\RakunWin32\Selen.Wpf.Core\obj\Release\MetroWindowResources.baml
+D:\Rakun\trunk\RakunWin32\Selen.Wpf.Core\obj\Release\Resources.baml
+D:\Rakun\trunk\RakunWin32\Selen.Wpf.Core\obj\Release\Selen.Wpf.Core_MarkupCompile.cache
+D:\Rakun\trunk\RakunWin32\Selen.Wpf.Core\obj\Release\Selen.Wpf.Core.g.resources
+D:\Rakun\trunk\RakunWin32\Selen.Wpf.Core\obj\Release\Selen.Wpf.Core.Properties.Resources.resources
+D:\Rakun\trunk\RakunWin32\Selen.Wpf.Core\obj\Release\Selen.Wpf.Core.csproj.GenerateResource.Cache
+D:\Rakun\trunk\RakunWin32\Selen.Wpf.Core\obj\Release\Selen.Wpf.Core.dll
+D:\Rakun\trunk\RakunWin32\Selen.Wpf.Core\obj\Release\Selen.Wpf.Core.pdb

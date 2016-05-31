@@ -1,0 +1,5 @@
+D:\Rakun\trunk\RakunWin32\Selen.Wpf.GenericAppTree.Contracts\bin\Release\Selen.Wpf.GenericAppTree.Contracts.dll
+D:\Rakun\trunk\RakunWin32\Selen.Wpf.GenericAppTree.Contracts\bin\Release\Selen.Wpf.GenericAppTree.Contracts.pdb
+D:\Rakun\trunk\RakunWin32\Selen.Wpf.GenericAppTree.Contracts\obj\Release\Selen.Wpf.GenericAppTree.Contracts.csprojResolveAssemblyReference.cache
+D:\Rakun\trunk\RakunWin32\Selen.Wpf.GenericAppTree.Contracts\obj\Release\Selen.Wpf.GenericAppTree.Contracts.dll
+D:\Rakun\trunk\RakunWin32\Selen.Wpf.GenericAppTree.Contracts\obj\Release\Selen.Wpf.GenericAppTree.Contracts.pdb

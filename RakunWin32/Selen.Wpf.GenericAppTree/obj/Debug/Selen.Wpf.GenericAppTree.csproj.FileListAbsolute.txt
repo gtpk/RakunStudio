@@ -26,10 +26,3 @@ C:\Rakun\trunk\RakunWin32\Selen.Wpf.GenericAppTree\bin\Debug\Selen.Wpf.GenericAp
 C:\Rakun\trunk\RakunWin32\Selen.Wpf.GenericAppTree\obj\Debug\Selen.Wpf.GenericAppTree.csprojResolveAssemblyReference.cache
 C:\Rakun\trunk\RakunWin32\Selen.Wpf.GenericAppTree\obj\Debug\Selen.Wpf.GenericAppTree.dll
 C:\Rakun\trunk\RakunWin32\Selen.Wpf.GenericAppTree\obj\Debug\Selen.Wpf.GenericAppTree.pdb
-C:\RakunStudio\RakunWin32\Selen.Wpf.GenericAppTree\bin\Debug\Selen.Wpf.GenericAppTree.dll
-C:\RakunStudio\RakunWin32\Selen.Wpf.GenericAppTree\bin\Debug\Selen.Wpf.GenericAppTree.pdb
-C:\RakunStudio\RakunWin32\Selen.Wpf.GenericAppTree\bin\Debug\Selen.Wpf.GenericAppTree.Contracts.dll
-C:\RakunStudio\RakunWin32\Selen.Wpf.GenericAppTree\bin\Debug\Selen.Wpf.GenericAppTree.Contracts.pdb
-C:\RakunStudio\RakunWin32\Selen.Wpf.GenericAppTree\obj\Debug\Selen.Wpf.GenericAppTree.csprojResolveAssemblyReference.cache
-C:\RakunStudio\RakunWin32\Selen.Wpf.GenericAppTree\obj\Debug\Selen.Wpf.GenericAppTree.dll
-C:\RakunStudio\RakunWin32\Selen.Wpf.GenericAppTree\obj\Debug\Selen.Wpf.GenericAppTree.pdb
