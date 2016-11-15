@@ -1,20 +1,29 @@
-int Delay_4_0=5;
-int SimpleLED_3_1=HIGH;
+int IFEqual_2_1=0;
+int IFEqual_2_0=0;
+int flame_5_0=4;
 int SimpleLED_3_0=13;
-int flame_2_0=4;
-int flame_2_1;
+int SimpleLED_3_1=HIGH;
 void setup()
 {
-    pinMode(flame_2_0,INPUT);
     pinMode(SimpleLED_3_0,OUTPUT);
+    pinMode(flame_5_0,INPUT);
     
 }
 void loop()
 {
-    flame_2_1=digitalRead(flame_2_0);
-    SimpleLED_3_1=flame_2_1;
     digitalWrite(SimpleLED_3_0,SimpleLED_3_1);
-    delay(Delay_4_0);
+    IFEqual_2_0=SimpleLED_3_1;
+    IFEqual_2_1=LOW;
+    if(IFEqual_2_0==IFEqual_2_1)
+    {
+        flame_5_1=LOW;
+        flame_5_1=digitalRead(flame_5_0);
+        
+    }
+    else
+    {
+        
+    }
     
 }
 
